@@ -1,0 +1,51 @@
+<div class="text-layout">
+  <h1>Basic Pipes</h1>
+  <p>Pipes included in Angular - Usually on Common Module</p>
+</div>
+
+<div class="p-grid text-layout">
+  <div class="p-col-4">
+    <p-card header="uppercase" [subheader]="nameLower | uppercase"
+      >{{ nameLower | uppercase }}
+    </p-card>
+  </div>
+  <div class="p-col-4">
+    <p-card header="lowercase" [subheader]="nameUpper | lowercase"
+      >{{ nameUpper | lowercase }}
+    </p-card>
+  </div>
+  <div class="p-col-4">
+    <p-card header="titlecase" [subheader]="fullName | titlecase"
+      >{{ fullName }}
+    </p-card>
+  </div>
+</div>
+
+<div class="text-layout">
+  <h1>Date | Pipe</h1>
+  <p>Pipe for Dates</p>
+</div>
+<div class="p-grid text-layout">
+  <div class="p-col-6">
+    <p-card>
+      <ul>
+        <li>date</li>
+        <li>date | date</li>
+        <li>date | date: 'short'</li>
+        <li>date | date: 'long'</li>
+        <li>date | date: 'E dd/MM/yy HH:mm'</li>
+      </ul>
+    </p-card>
+  </div>
+  <div class="p-col-6">
+    <p-card>
+      <ul>
+        <li>{{ date }}</li>
+        <li>{{ date | date }}</li>
+        <li>{{ date | date: "short" }}</li>
+        <li>{{ date | date: "long" }}</li>
+        <li>{{ date | date: "E dd/MM/yy HH:mm" }}</li>
+      </ul>
+    </p-card>
+  </div>
+</div>
