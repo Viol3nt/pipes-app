@@ -1,1 +1,76 @@
-<p>uncommons works!</p>
+<div class="text-layout">
+  <h1>Uncommon Pipes</h1>
+  <p>Pipes included in Angular - Usually on Common Module</p>
+</div>
+
+<div class="p-grid">
+  <div class="p-col p-md-6 p-lg-9 p-xl-12 text-layout">
+    <p-fieldset legend="i18nSelect Pipe" [toggleable]="true">
+      <p>
+        Saludos {{ name }}, es un placer
+        {{ gender | i18nSelect: invititationMap }} a nuestro evento.
+      </p>
+      <button
+        pButton
+        type="button"
+        class="p-button-secondary"
+        (click)="changePerson()"
+        label="Change Person"
+      ></button>
+    </p-fieldset>
+  </div>
+
+  <div class="p-col p-md-6 p-lg-9 p-xl-12 text-layout">
+    <p-fieldset legend="i18nPlural Pipe" [toggleable]="true">
+      <p>Currently, {{ clients.length | i18nPlural: clientsMap }}</p>
+      <button
+        pButton
+        type="button"
+        class="p-button-secondary"
+        (click)="deletePerson()"
+        label="Delete Client"
+      ></button>
+    </p-fieldset>
+  </div>
+
+  <div class="p-col p-md-6 p-lg-9 p-xl-12 text-layout">
+    <p-fieldset legend="Slice Pipe" [toggleable]="true">
+      <b>Original</b>
+      <pre>{{ clients }}</pre>
+
+      <b>slice:0:2</b>
+      <pre>{{ clients | slice: 0:2 }}</pre>
+
+      <b>slice:3:4</b>
+      <pre>{{ clients | slice: 3:4 }}</pre>
+
+      <b>slice:0:4 of "Franco"</b>
+      <pre>{{ "Franco" | slice: 0:4 }}</pre>
+    </p-fieldset>
+  </div>
+
+  <div class="p-col p-md-6 p-lg-9 p-xl-12 text-layout">
+    <p-fieldset legend="Json Pipe" [toggleable]="true">
+      <pre>{{ heroes | json }}</pre>
+    </p-fieldset>
+  </div>
+
+  <div class="p-col p-md-6 p-lg-9 p-xl-12 text-layout">
+    <p-fieldset legend="KeyValue Pipe" [toggleable]="true">
+      <ul>
+        <li *ngFor="let item of person | keyvalue">
+          {{ item.key | titlecase }}: {{ item.value }}
+        </li>
+      </ul>
+    </p-fieldset>
+  </div>
+
+  <div class="p-col p-md-6 p-lg-9 p-xl-12 text-layout">
+    <p-fieldset legend="Async Pipe" [toggleable]="true">
+      <pre *ngIf="!(myObservable | async)">Loading...</pre>
+      <pre>{{ myObservable | async }}</pre>
+      <pre *ngIf="!(valuePromise | async)">Loading...</pre>
+      <pre>{{ valuePromise | async }}</pre>
+    </p-fieldset>
+  </div>
+</div>

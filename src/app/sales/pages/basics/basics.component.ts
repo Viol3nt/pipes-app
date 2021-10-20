@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styles: [],
 })
 export class BasicsComponent {
-  nameLower: string = 'franco';
+  nameLower: string = 'fRaNco';
   nameUpper: string = 'FRANCO';
   fullName: string = 'FrAnCo SaMuDiO';
 
